@@ -6,7 +6,6 @@ exports.post = function(req, res) {
 
 exports.list = function(req, res) {
   Task.find(function(err, tasks){
-    console.log(tasks, err);
     res.send(tasks);
   });
 }
