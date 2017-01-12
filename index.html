@@ -13,12 +13,21 @@
     function getTasks() {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', "/tasks", true);
-      xhr.send();
       xhr.onreadystatechange = processRequest;
+      xhr.send();
     }
 
     function addTask() {
-      
+      var value = document.getElementById('task_value').value;
+      if(value != '') {
+        var params = 'text=' + value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.open('POST', '/task', true);
+        xhr.onreadystatechange = processRequest;
+        xhr.send();
+      }
     }
 
     function processRequest(e) {
