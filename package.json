@@ -18,6 +18,8 @@
   "homepage": "https://github.com/s-ramirez/csc-331#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "mongodb": "^2.2.20"
+    "mongodb": "^2.2.20",
+    "mongoose": "^4.7.6",
+    "request": "^2.79.0"
   }
 }

@@ -1,8 +1,35 @@
 <html>
   <head>
-    <title>Sample "Hello, World" Application</title>
+    <title>CSC-331 Hello World</title>
   </head>
   <body>
     <h1>Hello world</h1>
+
+    <button id="get_tasks">Get Tasks</button>
+    <button id="add_task">Add Task</button>
   </body>
+  <script type="text/javascript">
+  (function() {
+    function getTasks() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', "/tasks", true);
+      xhr.send();
+      xhr.onreadystatechange = processRequest;
+    }
+
+    function addTask() {
+      
+    }
+
+    function processRequest(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+        }
+    }
+
+    document.getElementById('add_task').addEventListener("click", addTask);
+    document.getElementById('get_tasks').addEventListener("click", getTasks);
+  })();
+  </script>
 </html>

@@ -9,12 +9,17 @@ var app = express();
 // Create a server that'll respond to all http requests
 var http = require('http').Server(app);
 
+// Express configuration
+app.use(express.static('assets'));
+
 // If the user targets '/' return the homepage
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.use(express.static('assets'));
+var tasksCtrl = require('./controllers/task.controller.js');
+app.post('/task', tasksCtrl.post);
+app.get('/tasks', tasksCtrl.list);
 
 var port = process.env.PORT || 8080;
 // Initialize the http server in a specified port
