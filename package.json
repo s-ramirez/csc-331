@@ -2,7 +2,7 @@
   "name": "csc-331",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": ""
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/s-ramirez/csc-331/issues"
   },
-  "homepage": "https://github.com/s-ramirez/csc-331#readme"
+  "homepage": "https://github.com/s-ramirez/csc-331#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.20"
+  }
 }
