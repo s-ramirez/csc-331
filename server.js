@@ -16,7 +16,8 @@ app.get('/', function(req, res){
 
 app.use(express.static('assets'));
 
+var port = process.env.PORT || 8080;
 // Initialize the http server in a specified port
-http.listen(3000, function(){
-  console.log('Listening on http://localhost:3000');
+http.listen(port, function(){
+  console.log('Listening on http://localhost:' + port);
 });
